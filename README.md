@@ -1,3 +1,3 @@
 ## 卒業論文
 
-WIP: https://github.com/konbu310/graduation-thesis/blob/master/root.pdf
+WIP: https://konbu310.github.io/graduation-thesis/main.pdf
