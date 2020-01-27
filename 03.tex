@@ -4,7 +4,7 @@
 \newpage
 
 \section{システム構成}
-Hyper Launcherはユーザーが実際に操作するためのクライアントアプリケーションと、登録したデータを保存しておくためのデータストアから構成される。構成図を図\ref{fig:system}に示す。
+Hyper Launcherはユーザーがアプリケーションを登録するためのクライアントと、登録したデータを保存しておくためのデータストアから構成される。構成図を図\ref{fig:system}に示す。
 
 \begin{figure}[h]
     \begin{center}
@@ -14,13 +14,13 @@ Hyper Launcherはユーザーが実際に操作するためのクライアント
     \label{fig:system}
 \end{figure}
 
-\section{クライアントアプリケーション}
-クライアントアプリケーションはElectron\footnote{https://electronjs.org}やTypeScript\footnote{https://www.typescriptlang.org/}、React\footnote{https://reactjs.org}といったWeb技術によって実装されており、macOSのデスクトップアプリケーションとして動作する。
+\section{クライアント}
+クライアントはElectron\footnote{https://electronjs.org}やTypeScript\footnote{https://www.typescriptlang.org/}、React\footnote{https://reactjs.org}といったWeb技術によって実装されており、macOSのデスクトップアプリケーションとして動作する。
 
-\subsection{Electron}
+\subsubsection{Electron}
 ElectronはHTML、JavaScript、CSSを用いてクロスプラットフォームなデスクトプアプリケーションを作成することができるソフトウェアフレームワークである。Electron自体はChromiumとNode.jsを使用しておりWeb技術のみで開発が完結するのが利点である。Hyper LauncherではElectronのglobalShortcutというAPIを利用し、Hyper Launcherが非アクティブ状態でもホットキーの入力を取得できるようになっている。アプリケーションの起動やアクティブ化なども標準の機能だけで実装できるため、ランチャーに適したフレームワークと言える。
 
-\subsection{AppleScript}
+\subsubsection{AppleScript}
 Web技術のみでは実装が難しい部分についてはAppleScriptを使用した。masOSにはosascriptと呼ばれるシェルスクリプトが存在し、これを利用することでNode.js\footnote{https://nodejs.org}からAppleScriptを実行することができる。AppleScriptを使用することで、起動中のアプリケーションや特定のアプリケーションがアクティブかどうかといった情報を取得することができ、これによってデスクトップアプリケーションとして十分な機能を実装することが可能となった。ただし実行する毎にプロセスを立ち上げるため、無闇に使用してしまうとラグが発生してしまうこととなる。また、AppleScriptはmacOSのみで使えるものであるため、Electronの利点であるクロスプラットフォーム対応はできなくなってしまった。
 
 \section{データストア}
