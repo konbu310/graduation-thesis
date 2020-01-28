@@ -1,3 +1,5 @@
-## 卒業論文
+# 卒業論文
 
-WIP: https://konbu310.github.io/graduation-thesis/main.pdf
+## Hyper Launcher: ホットキー型アプリケーションランチャーの利便性を高める研究
+
+PDF: https://konbu310.github.io/graduation-thesis/main.pdf
